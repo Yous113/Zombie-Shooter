@@ -22,10 +22,12 @@ GameObject:
   - component: {fileID: 33691070133386358}
   - component: {fileID: 23886763948806018}
   - component: {fileID: 136825137881439592}
-  - component: {fileID: 54693756466597028}
+  - component: {fileID: 114941152787803026}
+  - component: {fileID: 114489369004882594}
+  - component: {fileID: 143519364917594442}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -57,8 +59,9 @@ GameObject:
   - component: {fileID: 4296436970869680}
   - component: {fileID: 20114407380795850}
   - component: {fileID: 81451862359050112}
+  - component: {fileID: 114575701026943010}
   m_Layer: 0
-  m_Name: Main Camera
+  m_Name: FirstPersonCamera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -140,7 +143,7 @@ Camera:
   m_TargetEye: 3
   m_HDR: 1
   m_AllowMSAA: 1
-  m_AllowDynamicResolution: 0
+  m_AllowDynamicResolution: 1
   m_ForceIntoRT: 0
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
@@ -229,21 +232,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1521816060257546}
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
---- !u!54 &54693756466597028
-Rigidbody:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1521816060257546}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!81 &81451862359050112
 AudioListener:
   m_ObjectHideFlags: 1
@@ -251,6 +239,52 @@ AudioListener:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1946948131884876}
   m_Enabled: 1
+--- !u!114 &114489369004882594
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1521816060257546}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 406a2c609a6b9234eb5fdd857829e162, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  axes: 1
+  minimumVert: -45
+  maximumVert: 45
+  sensHorizontal: 10
+  sensVertical: 10
+  _rotationX: 0
+--- !u!114 &114575701026943010
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1946948131884876}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 406a2c609a6b9234eb5fdd857829e162, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  axes: 2
+  minimumVert: -45
+  maximumVert: 45
+  sensHorizontal: 10
+  sensVertical: 10
+  _rotationX: 0
+--- !u!114 &114941152787803026
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1521816060257546}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f59c2395724b2d4283207e5e647c3ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 6
 --- !u!136 &136825137881439592
 CapsuleCollider:
   m_ObjectHideFlags: 1
@@ -263,4 +297,21 @@ CapsuleCollider:
   m_Radius: 0.5
   m_Height: 2
   m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!143 &143519364917594442
+CharacterController:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1521816060257546}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Height: 2
+  m_Radius: 0.5
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
