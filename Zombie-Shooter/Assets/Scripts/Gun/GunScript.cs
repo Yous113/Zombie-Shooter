@@ -24,6 +24,12 @@ public class GunScript : MonoBehaviour {
         if(Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, range))
         {
             Debug.Log(hit.transform.name);
+
+            EnemyScript enemy = hit.transform.GetComponent<EnemyScript>();
+            if(enemy != null)
+            {
+                enemy.TakeDamage(damage);
+            }
         }
     }
 }
