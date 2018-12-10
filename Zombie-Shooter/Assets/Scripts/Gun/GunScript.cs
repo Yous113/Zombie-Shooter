@@ -5,6 +5,10 @@ public class GunScript : MonoBehaviour {
     public float damage = 10f;
     public float range = 100f;
 
+    public ParticleSystem Muzzleflash;
+
+    public AudioSource pistolSound;
+
     public Camera fpsCam;
 	
 	// Update is called once per frame
@@ -13,12 +17,14 @@ public class GunScript : MonoBehaviour {
         if (Input.GetButtonDown("Fire1"))
         {
             Shoot();
+
         }
 
 	}
 
     void Shoot()
     {
+        pistolSound.Play();
         RaycastHit hit;
 
         if(Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, range))
