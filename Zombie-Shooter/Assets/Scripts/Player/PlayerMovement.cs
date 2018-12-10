@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour {
 
     public float speed = 6f;
-    public float gravity = -9.8f;
+    //public float gravity = -9.8f; // tyngdegraft variabel 
 
     private CharacterController _charCont;
 
@@ -21,7 +21,7 @@ public class PlayerMovement : MonoBehaviour {
         Vector3 movement = new Vector3(deltaX, 0, deltaZ);
         movement = Vector3.ClampMagnitude(movement, speed); //limits the max speed of the player
 
-        movement.y = gravity;
+        //movement.y = gravity; //Lav Tyngdegraft
         
 
         movement *= Time.deltaTime; // time.deltaTime Ensures the speed the player moves does not change based on frame rate
