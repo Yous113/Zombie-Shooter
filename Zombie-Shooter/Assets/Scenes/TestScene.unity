@@ -353,6 +353,32 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!1 &216861983 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1777629898533970, guid: 2013c2aea2aac3946899431f1a1158f8,
+    type: 2}
+  m_PrefabInternal: {fileID: 471871179}
+--- !u!82 &216861984 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 82895652501072330, guid: 2013c2aea2aac3946899431f1a1158f8,
+    type: 2}
+  m_PrefabInternal: {fileID: 471871179}
+--- !u!114 &216861985
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 216861983}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d63aea3433483ce4f9b04fe59d508d05, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 5
+  range: 100
+  Muzzleflash: {fileID: 0}
+  pistolSound: {fileID: 216861984}
+  fpsCam: {fileID: 1432832308}
 --- !u!1001 &471871179
 Prefab:
   m_ObjectHideFlags: 0
@@ -392,7 +418,8 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114949613060028880, guid: 2013c2aea2aac3946899431f1a1158f8, type: 2}
   m_SourcePrefab: {fileID: 100100000, guid: 2013c2aea2aac3946899431f1a1158f8, type: 2}
   m_IsPrefabAsset: 0
 --- !u!1 &503855464
@@ -587,6 +614,11 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1085715014}
   m_CullTransparentMesh: 0
+--- !u!20 &1432832308 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 20114407380795850, guid: 2013c2aea2aac3946899431f1a1158f8,
+    type: 2}
+  m_PrefabInternal: {fileID: 471871179}
 --- !u!4 &1644601737 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4484727745615680, guid: 4e94f433ae7c54e4caba472a84fd10fe,

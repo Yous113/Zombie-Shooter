@@ -1,6 +1,9 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 
-public class GunScript : MonoBehaviour {
+public class PistolScript : MonoBehaviour
+{
 
     public float damage = 10f;
     public float range = 100f;
@@ -10,9 +13,10 @@ public class GunScript : MonoBehaviour {
     public AudioSource pistolSound;
 
     public Camera fpsCam;
-	
-	// Update is called once per frame
-	void Update () {
+
+    // Update is called once per frame
+    void Update()
+    {
 
         if (Input.GetButtonDown("Fire1"))
         {
@@ -20,19 +24,19 @@ public class GunScript : MonoBehaviour {
 
         }
 
-	}
+    }
 
     void Shoot()
     {
         pistolSound.Play();
         RaycastHit hit;
 
-        if(Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, range))
+        if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, range))
         {
             Debug.Log(hit.transform.name);
 
             EnemyScript enemy = hit.transform.GetComponent<EnemyScript>();
-            if(enemy != null)
+            if (enemy != null)
             {
                 enemy.TakeDamage(damage);
             }
