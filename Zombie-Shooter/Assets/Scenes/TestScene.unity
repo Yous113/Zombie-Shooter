@@ -646,7 +646,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5634987722451a941b1183702ae7564b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waves: []
+  waves:
+  - name: Round 1
+    Enemy: {fileID: 0}
+    amount: 0
+    rate: 0
+  - name: 
+    Enemy: {fileID: 0}
+    amount: 0
+    rate: 0
+  - name: 
+    Enemy: {fileID: 0}
+    amount: 0
+    rate: 0
+  - name: 
+    Enemy: {fileID: 0}
+    amount: 0
+    rate: 0
+  - name: 
+    Enemy: {fileID: 0}
+    amount: 0
+    rate: 0
   timeBetweenWaves: 5
   waveCountdown: 0
 --- !u!4 &1312003697
