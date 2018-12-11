@@ -5,12 +5,12 @@ using UnityEngine;
 public class PistolScript : MonoBehaviour
 {
 
-    public float damage = 10f;
-    public float range = 100f;
+    public float damage;
+    public float range;
 
     public ParticleSystem Muzzleflash;
 
-    public AudioSource pistolSound;
+    public AudioSource shootSound;
 
     public Camera fpsCam;
 
@@ -28,7 +28,7 @@ public class PistolScript : MonoBehaviour
 
     void Shoot()
     {
-        pistolSound.Play();
+        shootSound.Play();
         RaycastHit hit;
 
         if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, range))
