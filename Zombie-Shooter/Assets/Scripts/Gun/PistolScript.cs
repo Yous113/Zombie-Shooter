@@ -15,17 +15,16 @@ public class PistolScript : MonoBehaviour
 
     public Camera fpsCam;
 
-    private float nextTimeToFire = 0f;
+    private float nextTimeToFire = 3f;
 
     // Update is called once per frame
     void Update()
     {
 
-        if (Input.GetButtonDown("Fire1") && Time.time >= nextTimeToFire)
-            nextTimeToFire = Time.time + 1f / fireRate;
+        if (Input.GetButtonDown("Fire1") && Time.time >= nextTimeToFire)            
         {
             Shoot();
-
+            nextTimeToFire = Time.time + 1f / fireRate;
         }
 
     }
