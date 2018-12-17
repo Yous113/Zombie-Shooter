@@ -7,18 +7,22 @@ public class PistolScript : MonoBehaviour
 
     public float damage;
     public float range;
+    public float fireRate = 15f;
 
-    public ParticleSystem Muzzleflash;
+    public ParticleSystem muzzleflash;
 
     public AudioSource shootSound;
 
     public Camera fpsCam;
 
+    private float nextTimeToFire = 0f;
+
     // Update is called once per frame
     void Update()
     {
 
-        if (Input.GetButtonDown("Fire1"))
+        if (Input.GetButtonDown("Fire1") && Time.time >= nextTimeToFire)
+            nextTimeToFire = Time.time + 1f / fireRate;
         {
             Shoot();
 
@@ -28,6 +32,7 @@ public class PistolScript : MonoBehaviour
 
     void Shoot()
     {
+        muzzleflash.Play();
         shootSound.Play();
         RaycastHit hit;
 
