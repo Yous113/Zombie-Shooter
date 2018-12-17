@@ -15,7 +15,7 @@ public class PistolScript : MonoBehaviour
 
     public Camera fpsCam;
 
-    private float nextTimeToFire = 3f;
+    private float nextTimeToFire = 0f;
 
     // Update is called once per frame
     void Update()
@@ -31,8 +31,8 @@ public class PistolScript : MonoBehaviour
 
     void Shoot()
     {
-        muzzleflash.Play();
         shootSound.Play();
+        muzzleflash.Play();        
         RaycastHit hit;
 
         if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, range))
@@ -45,5 +45,5 @@ public class PistolScript : MonoBehaviour
                 enemy.TakeDamage(damage);
             }
         }
-    }
+    }    
 }
